@@ -1,0 +1,34 @@
+package MOBI;
+
+import java.util.Scanner;
+
+class Octal
+{
+	Octal(int number)
+	{
+		int num=number;
+		String Str="";
+		while(num>0)
+		{
+			int reminder=num%8;
+			num=num/8;
+			Str=reminder+Str;
+		}
+		
+		System.out.println("An Occtal number of "+number+" is "+Str);
+	}
+}
+public class Decimal_to_Octal {
+
+	public static void main(String[] args) 
+	{
+		
+		Scanner obj=new Scanner (System.in);
+		
+		System.out.println("Enter the number ");
+		int number =obj.nextInt();
+		
+		Octal op=new Octal(number);
+	}
+
+}
