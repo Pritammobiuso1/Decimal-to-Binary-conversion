@@ -1,0 +1,37 @@
+package MOBI;
+
+import java.util.Scanner;
+
+class Hexadecimal
+{
+	Hexadecimal(int number)
+	{
+		int num=number;
+		
+		String Str="";
+		
+		while(num>0)
+		{
+			int reminder=num%16;
+			num=num/16;
+			Str=reminder+Str;
+		}
+		
+		System.out.println("After converting Decimal to Hexadecimal");
+		
+		System.out.println("An Hexadecimal number of "+number+" is "+Str);
+	}
+}
+public class Decimal_to_Hexadecimal 
+{
+	public static void main(String [] args)
+	{
+		Scanner obj=new Scanner(System.in);
+		
+		System.out.println("Enter the number that you want to convert into Hexadecimal");
+		int number=obj.nextInt();
+		
+		Hexadecimal op=new Hexadecimal(number);
+	}
+
+}
