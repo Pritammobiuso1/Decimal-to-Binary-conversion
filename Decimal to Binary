@@ -1,0 +1,33 @@
+package MOBI;
+
+import java.util.Scanner;
+
+class Decimal
+{
+	Decimal(int number)
+	{
+		
+		String str="";
+		
+		int num=number;
+		while(num>0)
+		{
+			int rem=num%2;
+			num=num/2;
+			str=rem+str;
+		}
+		System.out.println(str);
+	
+	}
+}
+public class Decimal_to_binary
+{
+	public static void main(String [] args)
+	{
+		Scanner obj=new Scanner (System.in);
+		System.out.println("Enter the number ");
+		int number=obj.nextInt();
+		
+		Decimal op=new Decimal(number);
+	}
+}
