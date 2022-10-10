@@ -12,11 +12,11 @@ class Decimal
 		int num=number;
 		while(num>0)
 		{
-			int rem=num%2;
+			int reminder=num%2;
 			num=num/2;
-			str=rem+str;
+			str=reminder+str;
 		}
-		System.out.println(str);
+		System.out.println("After converting decimal to binary " +str);
 	
 	}
 }
