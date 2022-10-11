@@ -19,7 +19,7 @@ class Decimal1
 			
 		}
 		
-		System.out.println("After converting the binary to decimal");
+		System.out.println("After converting the octal to decimal");
 		System.out.println(binary);
 		
 	}
