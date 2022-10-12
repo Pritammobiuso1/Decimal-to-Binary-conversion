@@ -2,6 +2,8 @@ package Mobiuso;
 
 import java.util.Scanner;
 
+
+
 class Number_Conveter
 {
 	public static String toBinary(int number)
@@ -111,7 +113,11 @@ public class Client
 
 	public static void main(String[] args) 
 	{
+		char ch;
+		do 
+		{
 		Scanner obj=new Scanner (System.in);
+	
 		System.out.println("****Choices****");
 		System.out.println("1.Decimal to Binary \n2.Decimal to Octal \n3.Decimal to Hexadecimal  \n4.Binary to Decimal \n5.Octal to Decimal \n6.Hexadecimal to Decimal");
 		System.out.println("\nPlease select your choice");
@@ -151,7 +157,21 @@ public class Client
 			System.out.println("After converting the number from Hexadecimal to Decimal is");
 			System.out.println(Number_Conveter.Hexadecimal_To_Decimal(Number_To_Be_Converted));
 			break;
+			
+		 default :
+		 {
+			System.out.println("Please enter the the correct choice");
+			
+		 }
+		 
 		}
+		
+		
+			System.out.println("\nDo you want to continue then press 'y' ");
+			ch=obj.next().charAt(0);
+		}while(ch=='y');
+		
+		
 		
 	}
 
