@@ -1,67 +1,13 @@
-package MOBI;
+package Mobiuso;
 
-import java.util.*;
+import java.util.Scanner;
 
-class Number
+class Number_Conveter
 {
-	Scanner obj=new Scanner (System.in);
-
-	public void choise()
+	public static String toBinary(int number)
 	{
-		System.out.println(" Numeric Conversion ");
-		System.out.println("1.Decimal to Binary \n2.Decimal to Octal \n3.Decimal to Hexadecimal  \n4.Binary to Decimal \n5.Octal to Decimal \n6.Hexadecimal to Decimal");
 		
-		System.out.println("\nEnter your choice");
-		int choice=obj.nextInt();
-		
-		switch(choice)
-		{
-			case 1:
-			{
-				Decimal_to_Binary();
-				break;
-			}
-			case 2:
-			{
-				Decimal_to_Octal();
-				break;
-			}
-			case 3:
-			{
-				Decimal_to_Hexadecimal();
-				break;
-			}
-			case 4:
-			{
-				Binary_to_decimal();
-				break;
-			}
-			case 5:
-			{
-				Octal_to_Decimal();
-				break;
-			}
-			case 6:
-			{
-				Hexadecimal_To_Decimal();
-				break;
-			}
-			
-			default:
-			{
-				System.out.println("Please enter the correct choice");
-			}
-		}
-		
-	}
-	
-	
-	public void Decimal_to_Binary()
-	{
-		System.out.println("Enter the decimal number that you want to change into the binary number ");
-		
-		 int num=obj.nextInt();
-		 
+		int num=number;
 		 String str="";
 		 while(num>0)
 			{
@@ -69,17 +15,14 @@ class Number
 				num=num/2;
 				str=reminder+str;
 			}
-			System.out.println("After converting decimal to binary " +str);
+		return str;
 		
-			 
 	}
 	
 	
-	public void Decimal_to_Octal()
+	public static String to_Octal(int number)
 	{
-		System.out.println("Enter the decimal number that you want to change into the octal number ");
 		
-		 int number=obj.nextInt();
 		 int num=number;
 		 
 		String Str="";
@@ -89,39 +32,26 @@ class Number
 			num=num/8;
 			Str=reminder+Str;
 		}
+		return Str;
 		
-		System.out.println("An Occtal number of "+number+" is "+Str);
-	
 	}
 	
 	
-	public void Decimal_to_Hexadecimal()
+	public static String to_Hexadecimal(int number)
 	{
-		System.out.println("Enter the number that you want to convert into Hexadecimal");
-		int number=obj.nextInt();
 		int num=number;
-		
 		String Str="";
-		
 		while(num>0)
 		{
 			int reminder=num%16;
 			num=num/16;
 			Str=reminder+Str;
 		}
-		
-		System.out.println("After converting Decimal to Hexadecimal");
-		
-		System.out.println("An Hexadecimal number of "+number+" is "+Str);
-	
+		return Str;
 	}
 	
-	
-	public void Binary_to_decimal()
+	public static int Binary_To_Decimal(int number)
 	{
-		System.out.println("Enter the binary number");
-		int number=obj.nextInt();
-		
 		int num=number;
 		 int index=0;
 		 int Decimal_number=0;
@@ -129,82 +59,100 @@ class Number
 		 {
 			 int rem=num%10;
 			 num=num/10;
-			 
 			 Decimal_number=(int) (Decimal_number+rem*(Math.pow(2, index++)));
-			 
-			 
-		 }
 		 
-		 System.out.println("After converting binary to decimal the decimal number is  " +Decimal_number);
-	
+		 }
+		return Decimal_number;
+		
 	}
 	
-	public void Octal_to_Decimal()
+	public static int Octal_to_Decimal(int number)
 	{
-		System.out.println("Enter the octal number ");
-		int number =obj.nextInt();
-		
 		int num =number;
 		int index=0;
-		int decimal=0;
+		int Decimal_number=0;
 		
 		while(num>0)
 		{
 			
 			int reminder=num%10;
 			num=num/10;
-			decimal=(int) (decimal+reminder*(Math.pow(8, index++)));
+			Decimal_number=(int) (Decimal_number+reminder*(Math.pow(8, index++)));
 			
 		}
-		
-		System.out.println("After converting the octal to decimal");
-		System.out.println(decimal);
-		
+		return Decimal_number;
 		
 	}
 	
-	public void Hexadecimal_To_Decimal()
+	public static int Hexadecimal_To_Decimal(int number)
 	{
-		System.out.println("Enter the hexadecimal number");
-		int number =obj.nextInt();
 		
 		int num =number;
 		int index=0;
-		int Decimal=0;
+		int Decimal_number=0;
 		
 		while(num>0)
 		{
 			
 			int reminder=num%10;
 			num=num/10;
-			Decimal=(int) (Decimal+reminder*(Math.pow(16, index++)));
+			Decimal_number=(int) (Decimal_number+reminder*(Math.pow(16, index++)));
 			
 		}
-		
-		System.out.println("After converting the hexadecimal to decimal");
-		System.out.println(Decimal);
+		return Decimal_number;
 		
 	}
+	
 	
 	
 }
-public class Number_Converter
+public class Client
 {
 
 	public static void main(String[] args) 
 	{
-		Scanner scanner =new Scanner (System.in);
-		char ch;
-		Number obj=new Number();
+		Scanner obj=new Scanner (System.in);
+		System.out.println("****Choices****");
+		System.out.println("1.Decimal to Binary \n2.Decimal to Octal \n3.Decimal to Hexadecimal  \n4.Binary to Decimal \n5.Octal to Decimal \n6.Hexadecimal to Decimal");
+		System.out.println("\nPlease select your choice");
+		int choice=obj.nextInt();
 		
-		do 
+		
+		System.out.println("Enter the number to be converted");
+		int Number_To_Be_Converted=obj.nextInt();
+		
+		switch(choice)
 		{
-			obj.choise();
-			System.out.println("\nDo you want to continue then press 'y' ");
-			ch=scanner.next().charAt(0);
-		}while(ch=='y');
+		case 1:
+			System.out.println("After converting the number from Decimal to Bianry is");
+			System.out.println(Number_Conveter.toBinary(Number_To_Be_Converted));
+			break;
+			
+		case 2:
+			System.out.println("After converting the number from Decimal to Octal is");
+			System.out.println(Number_Conveter.to_Octal(Number_To_Be_Converted));
+			break;
+			
+		case 3:
+			System.out.println("After converting the number from Decimal to Hexadecimal is");
+			System.out.println(Number_Conveter.to_Hexadecimal(Number_To_Be_Converted));
+			break;
+			
+		case 4:
+			System.out.println(Number_Conveter.Binary_To_Decimal(Number_To_Be_Converted));
+			break;
+			
+		case 5:
+			System.out.println("After converting the number from Octal to decimal is");
+			System.out.println(Number_Conveter.Octal_to_Decimal(Number_To_Be_Converted));
+			break;
+			
+		case 6:
+			System.out.println("After converting the number from Hexadecimal to Decimal is");
+			System.out.println(Number_Conveter.Hexadecimal_To_Decimal(Number_To_Be_Converted));
+			break;
+		}
 		
-
 	}
 
 }
