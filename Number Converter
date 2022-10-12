@@ -11,9 +11,9 @@ class Number_Conveter
 		 String str="";
 		 while(num>0)
 			{
-				int reminder=num%2;
+				int remainder=num%2;
 				num=num/2;
-				str=reminder+str;
+				str=remainder+str;
 			}
 		return str;
 		
@@ -28,9 +28,9 @@ class Number_Conveter
 		String Str="";
 		while(num>0)
 		{
-			int reminder=num%8;
+			int remainder=num%8;
 			num=num/8;
-			Str=reminder+Str;
+			Str=remainder+Str;
 		}
 		return Str;
 		
@@ -43,9 +43,9 @@ class Number_Conveter
 		String Str="";
 		while(num>0)
 		{
-			int reminder=num%16;
+			int remainder=num%16;
 			num=num/16;
-			Str=reminder+Str;
+			Str=remainder+Str;
 		}
 		return Str;
 	}
@@ -75,9 +75,9 @@ class Number_Conveter
 		while(num>0)
 		{
 			
-			int reminder=num%10;
+			int remainder=num%10;
 			num=num/10;
-			Decimal_number=(int) (Decimal_number+reminder*(Math.pow(8, index++)));
+			Decimal_number=(int) (Decimal_number+remainder*(Math.pow(8, index++)));
 			
 		}
 		return Decimal_number;
@@ -94,9 +94,9 @@ class Number_Conveter
 		while(num>0)
 		{
 			
-			int reminder=num%10;
+			int remainder=num%10;
 			num=num/10;
-			Decimal_number=(int) (Decimal_number+reminder*(Math.pow(16, index++)));
+			Decimal_number=(int) (Decimal_number+remainder*(Math.pow(16, index++)));
 			
 		}
 		return Decimal_number;
