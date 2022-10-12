@@ -106,6 +106,37 @@ class Number_Conveter
 	}
 	
 	
+	public static String Octal_To_Binary(int number)
+	{
+		int num=number;
+		
+		int index=0;
+		int decimal_number=0;
+		String Str="";
+		
+		
+		while(num>0)
+		{
+			int remainder=num%10;
+			num=num/10;
+			decimal_number=(int)(decimal_number+remainder*(Math.pow(8, index++)));
+		
+			while(decimal_number>0)
+			{
+				int remainder1=decimal_number%2;
+				decimal_number=decimal_number/2;
+				Str=remainder1+Str;
+			}
+		}
+		
+		return Str;
+		
+	
+	}
+	
+	
+	
+	
 	
 }
 public class Client
@@ -119,7 +150,7 @@ public class Client
 		Scanner obj=new Scanner (System.in);
 	
 		System.out.println("****Choices****");
-		System.out.println("1.Decimal to Binary \n2.Decimal to Octal \n3.Decimal to Hexadecimal  \n4.Binary to Decimal \n5.Octal to Decimal \n6.Hexadecimal to Decimal");
+		System.out.println("1.Decimal to Binary \n2.Decimal to Octal \n3.Decimal to Hexadecimal  \n4.Binary to Decimal \n5.Octal to Decimal \n6.Hexadecimal to Decimal\n7.Octal to Binary");
 		System.out.println("\nPlease select your choice");
 		int choice=obj.nextInt();
 		
@@ -145,6 +176,7 @@ public class Client
 			break;
 			
 		case 4:
+			System.out.println("After converting the number from Bianry to Decimal is");
 			System.out.println(Number_Conveter.Binary_To_Decimal(Number_To_Be_Converted));
 			break;
 			
@@ -157,6 +189,13 @@ public class Client
 			System.out.println("After converting the number from Hexadecimal to Decimal is");
 			System.out.println(Number_Conveter.Hexadecimal_To_Decimal(Number_To_Be_Converted));
 			break;
+			
+		case 7:
+			System.out.println("After converting the number from Octal to Bianry is");
+			System.out.println(Number_Conveter.Octal_To_Binary(Number_To_Be_Converted));
+			break;
+			
+		
 			
 		 default :
 		 {
